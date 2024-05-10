@@ -2,72 +2,60 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Projeto de Exemplo usando Node.js e NestJS
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Este é um projeto de exemplo que utiliza Node.js e NestJS para criar um serviço simples de cálculo de IMC (Índice de Massa Corporal).
 
-## Description
+## Pré-requisitos
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Certifique-se de ter Node.js instalado em sua máquina. Você pode baixá-lo em [nodejs.org](https://nodejs.org/en).
 
-## Installation
+## Instalação
 
-```bash
-$ npm install
-```
+### 1. Instale o NestJS CLI globalmente executando o seguinte comando:
+npm install -g @nestjs/cli
 
-## Running the app
+### 2. Se você estiver usando o PowerShell no Windows, é necessário configurar a política de execução para permitir scripts não assinados. Execute o seguinte comando no PowerShell como administrador:
+Set-ExecutionPolicy RemoteSigned
 
-```bash
-# development
-$ npm run start
+## Configuração do Projeto
 
-# watch mode
-$ npm run start:dev
+### 1. Crie um novo projeto NestJS executando o seguinte comando:
+nest new back-end-node-nest
 
-# production mode
-$ npm run start:prod
-```
+### 2. Navegue até o diretório do projeto:
+cd project-name
 
-## Test
+## Executando o Serviço
 
-```bash
-# unit tests
-$ npm run test
+### Para iniciar o serviço, execute o seguinte comando:
+npm start
 
-# e2e tests
-$ npm run test:e2e
+### Após a inicialização, você pode acessar o serviço através do seguinte URL:
+http://localhost:3000/
 
-# test coverage
-$ npm run test:cov
-```
+# Este serviço fornece dois endpoints:
 
-## Support
+## 1. GET /:weight/:height
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+###    Este endpoint calcula o IMC (Índice de Massa Corporal) com base no peso e altura fornecidos como parâmetros na URL.
 
-## Stay in touch
+###   Exemplo:
+    GET http://localhost:3000/91/1.93
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Isso retornará uma mensagem indicando o IMC calculado.
 
-## License
+## 2. GET /
 
-Nest is [MIT licensed](LICENSE).
+### Este endpoint retorna uma mensagem de saudação.
+
+###   Exemplo:
+    GET http://localhost:3000
+
+Isso retornará uma mensagem "Hello World!".
+
+## O projeto consiste em dois principais componentes:
+
+- AppController: Responsável por manipular as requisições HTTP e chamar os serviços apropriados.
+
+- AppService: Contém a lógica de negócios para o cálculo do IMC e a mensagem de saudação.
